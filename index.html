@@ -3,125 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>1n1t.tech | Cybersecurity Portfolio</title>
+  <title>1n1t.tech |  Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* Global Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Fira Code', monospace; background:#0b0f14; color:#e5e7eb; line-height:1.6; }
+    a { color:#00ffff; text-decoration:none; }
+    a:hover { color:#ff00ff; }
+    .container { max-width:1000px; margin:auto; padding:2rem; }
 
-    body {
-      font-family: 'Fira Code', monospace;
-      background: #0b0f14;
-      color: #e5e7eb;
-      line-height: 1.6;
-    }
+    header { text-align:center; padding:2rem 0; }
+    header h1 { font-size:3rem; color:#00ffff; margin-bottom:0.5rem; text-shadow:0 0 10px #00ffff; }
+    header p { font-size:1.2rem; color:#9ca3af; }
 
-    a {
-      color: #00ffff;
-      text-decoration: none;
-    }
+    nav { display:flex; justify-content:center; gap:2rem; margin:2rem 0; }
+    nav a { font-weight:bold; transition:color 0.3s ease; }
 
-    a:hover {
-      color: #ff00ff;
-    }
+    section { margin:4rem 0; padding:2rem; background:#1c1f26; border-radius:10px; box-shadow:0 0 20px rgba(0,255,255,0.2); }
+    section h2 { color:#00ffff; margin-bottom:1rem; font-size:2rem; border-bottom:2px solid #00ffff; display:inline-block; padding-bottom:0.3rem; }
 
-    /* Container */
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem;
-    }
+    .btn { display:inline-block; margin-top:1rem; padding:0.5rem 1rem; border:2px solid #00ffff; border-radius:5px; color:#00ffff; font-weight:bold; transition:all 0.3s ease; }
+    .btn:hover { background:#00ffff; color:#0b0f14; box-shadow:0 0 10px #00ffff; }
 
-    /* Header */
-    header {
-      text-align: center;
-      padding: 2rem 0;
-    }
+    footer { text-align:center; margin:4rem 0 2rem; color:#9ca3af; font-size:0.9rem; }
 
-    header h1 {
-      font-size: 3rem;
-      color: #00ffff;
-      margin-bottom: 0.5rem;
-      text-shadow: 0 0 10px #00ffff;
-    }
+    pre { background:#0b0f14; border:1px solid #00ffff; padding:1rem; overflow-x:auto; border-radius:5px; margin-top:1rem; }
 
-    header p {
-      font-size: 1.2rem;
-      color: #9ca3af;
-    }
+    ul { margin-left:1.2rem; margin-top:0.5rem; }
+    li { margin-bottom:0.5rem; }
 
-    /* Navigation */
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-
-    nav a {
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    /* Sections */
-    section {
-      margin: 4rem 0;
-      padding: 2rem;
-      background: #1c1f26;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-    }
-
-    section h2 {
-      color: #00ffff;
-      margin-bottom: 1rem;
-      font-size: 2rem;
-      border-bottom: 2px solid #00ffff;
-      display: inline-block;
-      padding-bottom: 0.3rem;
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      border: 2px solid #00ffff;
-      border-radius: 5px;
-      color: #00ffff;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #00ffff;
-      color: #0b0f14;
-      box-shadow: 0 0 10px #00ffff;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      margin: 4rem 0 2rem;
-      color: #9ca3af;
-      font-size: 0.9rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      nav {
-        flex-direction: column;
-        gap: 1rem;
-      }
+    @media(max-width:600px){
+      header h1 { font-size:2rem; }
+      nav { flex-direction:column; gap:1rem; }
     }
   </style>
 </head>
@@ -129,56 +45,145 @@
   <div class="container">
     <header>
       <h1>1n1t.tech</h1>
-      <p>Cybersecurity Portfolio | Ethical Hacking & Security Research</p>
+      <p>Qusai's Portfolio | Cybersecurity [DFIR] & Programmer</p>
       <p>GitHub: <a href="https://github.com/0xqS3C" target="_blank">@0xqS3C</a></p>
     </header>
 
     <nav>
       <a href="#about">About Me</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
+      <a href="#projects">Python Projects</a>
+      <a href="#ctf">CTF Achievements</a>
+      <a href="#team">Team</a>
       <a href="#contact">Contact</a>
     </nav>
 
     <section id="about">
       <h2>About Me</h2>
-      <p>Hello! I am 1n1t, a cybersecurity enthusiast focused on ethical hacking, digital forensics, and cyber defense. My goal is to explore vulnerabilities, understand security mechanisms, and contribute to safer digital environments.</p>
+      <p>Hi, I’m Qusai, also known as 1n1t. I’m passionate about Cybersecurity and Digital Forensics & Incident Response (DFIR). I enjoy analyzing systems, investigating security incidents, and understanding how attacks happen in order to prevent them. I’m constantly learning, improving my technical skills, and working on projects that challenge me in the field of cybersecurity. This website is where I share my journey, research, and hands-on experiences in the world of DFIR and security.</p>
     </section>
 
     <section id="projects">
-      <h2>Projects</h2>
+      <h2>Python Projects</h2>
+      <p>Here are some of my notable Python OOP projects:</p>
       <ul>
-        <li><strong>AlphaS3C:</strong> Android-based digital wellbeing system that detects unhealthy screen usage and intervenes in real-time.</li>
-        <li><strong>CTF Challenges:</strong> Solutions and write-ups for Capture The Flag cybersecurity competitions.</li>
-        <li><strong>Security Scripts:</strong> Automated scripts for penetration testing and vulnerability scanning.</li>
+        <li><strong>SimpleGame (OOP Project):</strong> A Python-based quiz game demonstrating object-oriented principles, encapsulation, and file handling.</li>
+        <li><strong>DFIR Automation Scripts:</strong> Python scripts for log analysis, malware sample processing, and network monitoring.</li>
+        <li><strong>CTF Tools:</strong> Automation scripts for solving CTF challenges efficiently.</li>
       </ul>
+      <p>Python OOP simple project made 2 years ago <strong>Treasure Game</strong>:</p>
+      <pre>
+
+class SimpleGame:
+    
+    # attributes comments 
+    
+    def __init__(self,question,answer,points):
+        self.__Questionp=question
+        self.__Answer=answer
+        self.__Point=points
+    def GetQueation(self):
+        
+        return self.__Questionp
+    
+    def checkanwer(self,ans):
+        
+        if ans == int(self.__Answer):
+            return True
+        else:
+            return False
+    def getpoint(self,att):
+        if att==1:
+            
+            return self.__Point
+        else:
+            return int((self.__Point)/2)
+        
+flag=True
+try:        
+    Arrayofquestions = []
+    file=open("QuestionsList.txt","r")
+    x=file.readline().strip()
+    
+    while x!="":
+        
+        line1=x
+        line2=int(file.readline().strip())
+        line3=int(file.readline().strip())
+       
+        Arrayofquestions.append(SimpleGame(line1, line2, line3))
+        x=file.readline().strip()
+except:
+      flag = False 
+      print("file is not found !")
+      
+      
+if flag != False :
+    
+
+    # lets constraints the q's no 
+    
+    QuesntionNo = int(input("Enter the question No "))
+    
+    while QuesntionNo <1 or QuesntionNo>5:
+        
+      
+        print("Enter a question number between 1 and 5 >: ") 
+        
+        QuesntionNo = int(input("Enter the question No "))
+        
+    answer=False
+    attempts=0
+    while answer==False:
+                               
+        print(Arrayofquestions[QuesntionNo-1].GetQueation())  
+        
+        Myanswer= int(input("Enter your answer "))
+        
+        answer= Arrayofquestions[QuesntionNo-1].checkanwer(Myanswer)
+        
+        attempts+=1
+        
+        
+        if answer == False :
+            print("Try Again ! ")
+        else:
+            print("Your point is : ",Arrayofquestions[QuesntionNo-1].getpoint(attempts))
+            
+            
+else:
+    print("The question file source is nor ready yet >:, system is crushed ... ")
+      </pre>
       <a href="https://github.com/0xqS3C" class="btn" target="_blank">View More Projects</a>
     </section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <p>Here are some of the tools and technologies I work with:</p>
+    <section id="ctf">
+      <h2>CTF Achievements</h2>
       <ul>
-        <li>Python & Bash scripting</li>
-        <li>Linux & Kali Linux</li>
-        <li>Penetration Testing & Vulnerability Analysis</li>
-        <li>Networking & Protocol Analysis</li>
-        <li>Reverse Engineering & Exploit Development</li>
+        <li>🏆 Top 12 – P3RF3CT R00T CTF</li>
+        <li>🏆 Top 7 – Cyber Warriors 2025</li>
+        <li>🏆 Top 5 – Cyber Kingdom CTF</li>
       </ul>
+      <p>I also publish detailed <strong>CTF writeups</strong> to share knowledge and techniques with the community.</p>
+      <a href="https://github.com/0xqS3C/writeups" class="btn" target="_blank">Read Writeups</a>
+    </section>
+
+    <section id="team">
+      <h2>Team & Collaboration</h2>
+      <p>I am an active member of <strong>JordanSec</strong>, contributing to cybersecurity research, DFIR analysis, and collaborative projects with other security enthusiasts.</p>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>Want to collaborate or just say hi? Reach out to me:</p>
+      <p>Want to collaborate, ask questions, or see my projects in action? Reach out:</p>
       <ul>
-        <li>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></li>
+        <li>Email: <a href="mailto:QHaddad@stud.jubilee.edu.jo">QHaddad@stud.jubilee.edu.jo</a></li>
         <li>GitHub: <a href="https://github.com/0xqS3C" target="_blank">@0xqS3C</a></li>
-        <li>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></li>
+        <li>Instagram: <a href="https://www.instagram.com/_1n1t_/" target="_blank">_1n1t_</a></li>
       </ul>
     </section>
 
     <footer>
-      &copy; 2026 1n1t.tech | Built with 💻 and a love for cybersecurity
+      &copy; 2026 1n1t.tech | Built with 💻 & a passion for DFIR and cybersecurity
     </footer>
   </div>
 </body>
