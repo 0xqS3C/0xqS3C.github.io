@@ -17,7 +17,7 @@
     .container { max-width:1000px; margin:auto; padding:2rem; }
     header { text-align:center; padding:2rem 0; }
     header h1 { font-size:3rem; color:#00ffff; margin-bottom:0.5rem; text-shadow:0 0 10px #00ffff; }
-    nav { display:flex; justify-content:center; gap:2rem; margin:2rem 0; }
+    nav { display:flex; justify-content:center; gap:2rem; margin:2rem 0; flex-wrap: wrap; }
     nav a { font-weight:bold; }
     section { margin:4rem 0; padding:2rem; background:#1c1f26; border-radius:10px; box-shadow:0 0 20px rgba(0,255,255,0.2); }
     section h2 { color:#00ffff; margin-bottom:1rem; font-size:2rem; border-bottom:2px solid #00ffff; display:inline-block; padding-bottom:0.3rem; }
@@ -38,18 +38,34 @@
       <h1>Write-ups</h1>
     </header>
 
+    <!-- Full Navigation Bar -->
     <nav>
       <a href="../index.html">Home</a>
+      <a href="../about.html">About Me</a>
       <a href="../projects.html">Python Projects</a>
+      <a href="../writeups/index.html">Write-ups</a>
+      <a href="../achievements.html">Achievements</a>
+      <a href="../team.html">Team</a>
+      <a href="../assets.html">Assets</a>
       <a href="../contact.html">Contact</a>
     </nav>
 
+    <!-- Write-ups Section -->
     <section>
       <h2>The Final Hop</h2>
       <div class="project-box">
-        <p><strong>Description:</strong> On the night of May 21 our SOC received a high-severity alert indicating unusual lateral movement in the Active Directory environment...</p>
+        <p><strong>Description:</strong> On the night of May 21 our SOC received a high-severity alert indicating unusual lateral movement in the Active Directory environment. Internal logs showed the Domain Controller (DC) was accessed by a suspicious account. A few hours later a critical application server became inaccessible. Booting from a recovery image revealed the local Administrator password had been changed without authorization.</p>
         <p><strong>File:</strong> <a href="The Final Hop — Challenge write-up.docx" target="_blank">Download Write-up</a></p>
       </div>
+
+      <!-- Future Write-ups can be added like this -->
+      <!--
+      <h2>Next Challenge Name</h2>
+      <div class="project-box">
+        <p><strong>Description:</strong> Brief description here...</p>
+        <p><strong>File:</strong> <a href="filename.docx" target="_blank">Download Write-up</a></p>
+      </div>
+      -->
     </section>
 
     <footer>
@@ -57,6 +73,5 @@
     </footer>
 
   </div>
-
 </body>
 </html>
