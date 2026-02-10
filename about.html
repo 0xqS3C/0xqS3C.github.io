@@ -1,84 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Me | 1n1t.tech</title>
+  <meta name="description"
+    content="About Qusai (1n1t) — skills, background, and tools in cybersecurity, DFIR, and programming." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
-
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Fira Code', monospace; background:#0b0f14; color:#e5e7eb; line-height:1.6; }
-    a { color:#00ffff; text-decoration:none; }
-    a:hover { color:#ff00ff; }
-    .container { max-width:1000px; margin:auto; padding:2rem; }
-    header { text-align:center; padding:2rem 0; }
-    header h1 { font-size:3rem; color:#00ffff; margin-bottom:0.5rem; text-shadow:0 0 10px #00ffff; }
-    nav { display:flex; justify-content:center; gap:2rem; margin:2rem 0; flex-wrap: wrap; }
-    nav a { font-weight:bold; }
-    section { margin:4rem 0; padding:2rem; background:#1c1f26; border-radius:10px; box-shadow:0 0 20px rgba(0,255,255,0.2); }
-    section h2 { color:#00ffff; margin-bottom:1rem; font-size:2rem; border-bottom:2px solid #00ffff; display:inline-block; padding-bottom:0.3rem; }
-    ul { list-style:none; }
-    li { margin-bottom:0.5rem; }
-    .btn { display:inline-block; margin-top:1rem; padding:0.5rem 1rem; border:2px solid #00ffff; border-radius:5px; color:#00ffff; font-weight:bold; cursor:pointer; }
-    .btn:hover { background:#00ffff; color:#0b0f14; }
-    footer { text-align:center; margin:4rem 0 2rem; color:#9ca3af; }
-    @media(max-width:600px){ nav { flex-direction:column; gap:1rem; } }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-  <div class="container">
 
-    <header>
-      <h1>About Me</h1>
-    </header>
-
-    <!-- Top Navigation Bar -->
-    <nav>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">&gt;_ 1n1t.tech</a>
+    <div class="hamburger" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="about.html">About Me</a>
-      <a href="projects.html">Python Projects</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
       <a href="writeups/index.html">Write-ups</a>
       <a href="achievements.html">Achievements</a>
       <a href="team.html">Team</a>
       <a href="assets.html">Assets</a>
       <a href="contact.html">Contact</a>
-    </nav>
+    </div>
+  </nav>
 
-    <!-- About Section -->
-    <section>
-      <h2>Who I Am</h2>
-      <p>
-        Hi, I’m Qusai (1n1t), passionate about Cybersecurity and DFIR.  
-        I analyze systems, investigate incidents, and automate processes with Python.
-      </p>
+  <div class="container">
 
-      <h2>Skills</h2>
-      <ul>
-        <li>Digital Forensics & Incident Response</li>
-        <li>Active Directory Security</li>
-        <li>Python (OOP, automation, CV)</li>
-        <li>Network & Log Analysis</li>
-        <li>Computer Vision (OpenCV)</li>
-      </ul>
+    <!-- Page Header -->
+    <section class="hero fade-in" style="padding-bottom: var(--space-xl);">
+      <h1>// About Me</h1>
+      <p class="tagline">Cybersecurity enthusiast · DFIR · Python Developer</p>
     </section>
 
-    <!-- Optional Extra Section -->
-    <section>
-      <h2>Bio & Achievements</h2>
-      <p>
-        I have participated in several CTFs and coding competitions, building skills in cybersecurity, DFIR, and programming.
-      </p>
+    <!-- Bio Section -->
+    <section class="fade-in">
+      <div class="section-header">
+        <h2>Who I Am</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Hi, I'm <strong style="color:var(--cyan);">Qusai (1n1t)</strong> — passionate about Cybersecurity
+            and Digital Forensics & Incident Response (DFIR). I analyze systems, investigate incidents,
+            reconstruct attack timelines, and automate processes with Python.
+          </p>
+          <p>
+            I've participated in several CTFs and coding competitions, building deep skills in
+            cybersecurity, reverse engineering, and software development. My passion lies in
+            understanding how attackers think — and documenting every finding along the way.
+          </p>
+          <p>
+            I'm currently focused on Active Directory security, network forensics, and building
+            automation tools that make incident response faster and more reliable.
+          </p>
+        </div>
+
+        <div>
+          <h3 style="color:var(--cyan); margin-bottom: var(--space-md); font-size: 0.95rem;">
+            &gt; Quick Stats
+          </h3>
+          <div style="display:flex; flex-direction:column; gap: var(--space-sm);">
+            <div class="card" style="padding: var(--space-md);">
+              <p style="color: var(--cyan); font-weight: 700; margin-bottom: 2px;">Focus</p>
+              <p>DFIR & Active Directory</p>
+            </div>
+            <div class="card" style="padding: var(--space-md);">
+              <p style="color: var(--magenta); font-weight: 700; margin-bottom: 2px;">Languages</p>
+              <p>Python, Bash, PowerShell</p>
+            </div>
+            <div class="card" style="padding: var(--space-md);">
+              <p style="color: var(--purple); font-weight: 700; margin-bottom: 2px;">GitHub</p>
+              <p><a href="https://github.com/0xqS3C" target="_blank">@0xqS3C</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <footer>
-      &copy; 2026 1n1t.tech | Built with 💻 & passion for DFIR
+    <!-- Skills Section -->
+    <section class="fade-in">
+      <div class="section-header">
+        <h2>Skills & Expertise</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-item">
+          <span class="skill-icon">🔍</span>
+          Digital Forensics & IR
+        </div>
+        <div class="skill-item">
+          <span class="skill-icon">🛡️</span>
+          Active Directory Security
+        </div>
+        <div class="skill-item">
+          <span class="skill-icon">🐍</span>
+          Python (OOP, Automation, CV)
+        </div>
+        <div class="skill-item">
+          <span class="skill-icon">📊</span>
+          Network & Log Analysis
+        </div>
+        <div class="skill-item">
+          <span class="skill-icon">👁️</span>
+          Computer Vision (OpenCV)
+        </div>
+        <div class="skill-item">
+          <span class="skill-icon">🏴</span>
+          CTF Competitions
+        </div>
+        <div class="skill-item">
+          <span class="skill-icon">🖥️</span>
+          PowerShell & Bash
+        </div>
+        <div class="skill-item">
+          <span class="skill-icon">🔧</span>
+          Scripting & Automation
+        </div>
+      </div>
+    </section>
+
+    <!-- Technologies / Tools -->
+    <section class="fade-in">
+      <div class="section-header">
+        <h2>Tools & Technologies</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="tags" style="justify-content: center; gap: var(--space-md);">
+        <span class="tag tag-cyan">Wireshark</span>
+        <span class="tag tag-cyan">FTK Imager</span>
+        <span class="tag tag-cyan">Autopsy</span>
+        <span class="tag tag-cyan">Volatility</span>
+        <span class="tag tag-magenta">Python</span>
+        <span class="tag tag-magenta">OpenCV</span>
+        <span class="tag tag-purple">Burp Suite</span>
+        <span class="tag tag-purple">Nmap</span>
+        <span class="tag">Git & GitHub</span>
+        <span class="tag">Linux</span>
+        <span class="tag">Windows Server</span>
+        <span class="tag">Active Directory</span>
+        <span class="tag">PowerShell</span>
+        <span class="tag">VS Code</span>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="writeups/index.html">Write-ups</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://github.com/0xqS3C" target="_blank">GitHub</a>
+      </div>
+      <p>&copy; 2026 1n1t.tech | Built with 💻 & passion for DFIR</p>
     </footer>
 
   </div>
+
+  <script src="assets/js/main.js"></script>
 </body>
+
 </html>
