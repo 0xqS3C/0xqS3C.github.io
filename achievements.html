@@ -1,33 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Achievements | 1n1t</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1n1t.tech | Achievements</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Fira Code', monospace; background:#0b0f14; color:#e5e7eb; line-height:1.6; }
+    a { color:#00ffff; text-decoration:none; }
+    a:hover { color:#ff00ff; }
+
+    .container { max-width:1000px; margin:auto; padding:2rem; }
+
+    header { text-align:center; padding:2rem 0; }
+    header h1 { font-size:3rem; color:#00ffff; margin-bottom:0.5rem; text-shadow:0 0 10px #00ffff; }
+
+    nav { display:flex; justify-content:center; gap:2rem; margin:2rem 0; }
+    nav a { font-weight:bold; }
+
+    section {
+      margin:4rem 0;
+      padding:2rem;
+      background:#1c1f26;
+      border-radius:10px;
+      box-shadow:0 0 20px rgba(0,255,255,0.2);
+    }
+
+    section h2 {
+      color:#00ffff;
+      margin-bottom:1rem;
+      font-size:2rem;
+      border-bottom:2px solid #00ffff;
+      display:inline-block;
+      padding-bottom:0.3rem;
+    }
+
+    ul {
+      list-style:none;
+      margin-top:1rem;
+      padding-left:0;
+    }
+    ul li {
+      padding:0.5rem 0;
+      border-left:3px solid #00ffff;
+      margin-bottom:0.5rem;
+    }
+    ul li:hover { border-left-color:#ff00ff; }
+
+    .btn {
+      display:inline-block;
+      margin-top:1rem;
+      padding:0.5rem 1rem;
+      border:2px solid #00ffff;
+      border-radius:5px;
+      color:#00ffff;
+      font-weight:bold;
+      cursor:pointer;
+    }
+    .btn:hover { background:#00ffff; color:#0b0f14; }
+
+    footer { text-align:center; margin:4rem 0 2rem; color:#9ca3af; }
+
+    @media(max-width:600px){ nav { flex-direction:column; gap:1rem; } }
+  </style>
 </head>
 
 <body>
+  <div class="container">
 
-<nav class="navbar">
-  <a href="index.html">Home</a>
-  <a href="projects.html">Projects</a>
-  <a href="writeups/index.html">Write-ups</a>
-</nav>
+    <header>
+      <h1>1n1t.tech</h1>
+      <p>Qusai's Portfolio | Cybersecurity [DFIR] & Programmer</p>
+      <p>GitHub: <a href="https://github.com/0xqS3C" target="_blank">@0xqS3C</a></p>
+    </header>
 
-<section class="container">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Python Projects</a>
+      <a href="writeups/index.html">Write-ups</a>
+    </nav>
 
-  <h1>🏆 Achievements</h1>
+    <section id="achievements">
+      <h2>CTF & Other Achievements</h2>
+      <ul>
+        <li>🥇 Eureka Level Three (Electrical Engineering): Gold Medal</li>
+        <li>🥈 Eureka Level Two (Arduino): Silver Medal</li>
+        <li>🏆 STEAM School Awards: Best Programmer · Best Presenter · Best Individual Effort</li>
+        <li>🏆 Top 12 – P3RF3CT R00T CTF</li>
+        <li>🏆 Top 7 – Cyber Warriors 2025</li>
+        <li>🏆 Top 5 – Cyber Kingdom CTF</li>
+      </ul>
+    </section>
 
-  <ul class="achievements-list">
-    <li>🥇 Eureka Level Three (Electrical Engineering): Gold Medal</li>
-    <li>🥈 Eureka Level Two (Arduino): Silver Medal</li>
-    <li>🏆 STEAM School Awards: Best Programmer · Best Presenter · Best Individual Effort</li>
-    <li>🏆 Top 12 – P3RF3CT R00T CTF</li>
-    <li>🏆 Top 7 – Cyber Warriors 2025</li>
-    <li>🏆 Top 5 – Cyber Kingdom CTF</li>
-  </ul>
+    <footer>
+      &copy; 2026 1n1t.tech | Built with 💻 & passion for DFIR
+    </footer>
 
-</section>
-
+  </div>
 </body>
 </html>
