@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>1n1t.tech | Cybersecurity Portfolio</title>
-  <meta name="description" content="Qusai (1n1t) — Cybersecurity DFIR specialist, Python developer, and CTF competitor. Explore write-ups, projects, and achievements." />
+  <meta name="description"
+    content="Qusai (1n1t) — Cybersecurity DFIR specialist, Python developer, and CTF competitor. Explore write-ups, projects, and achievements." />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-  <!-- ========== NAVIGATION ========== -->
+  <!-- Animated Background -->
+  <canvas id="particle-canvas"></canvas>
+  <div class="bg-orb"></div>
+
+  <!-- Navigation -->
   <nav class="navbar">
     <a href="index.html" class="logo">&gt;_ 1n1t.tech</a>
     <div class="hamburger" aria-label="Toggle navigation">
@@ -37,7 +40,7 @@
 
   <div class="container">
 
-    <!-- ========== HERO SECTION ========== -->
+    <!-- Hero Section -->
     <section class="hero fade-in">
       <h1>&gt;_ 1n1t.tech</h1>
       <p class="tagline">
@@ -57,7 +60,7 @@
       </div>
     </section>
 
-    <!-- ========== QUICK ABOUT ========== -->
+    <!-- Quick About -->
     <section class="fade-in">
       <div class="section-header">
         <h2>// Who I Am</h2>
@@ -79,22 +82,20 @@
           <a href="about.html" class="btn" style="margin-top: var(--space-md);">Learn More →</a>
         </div>
 
-        <div>
-          <div class="tags">
-            <span class="tag tag-cyan">🔍 DFIR</span>
-            <span class="tag tag-cyan">🛡️ Active Directory</span>
-            <span class="tag tag-magenta">🐍 Python</span>
-            <span class="tag tag-purple">🏴 CTF Player</span>
-            <span class="tag">📊 Log Analysis</span>
-            <span class="tag">👁️ Computer Vision</span>
-            <span class="tag">🔧 Automation</span>
-            <span class="tag">🌐 Network Security</span>
-          </div>
+        <div class="tags stagger-children" style="align-content: start;">
+          <span class="tag tag-cyan">🔍 DFIR</span>
+          <span class="tag tag-cyan">🛡️ Active Directory</span>
+          <span class="tag tag-magenta">🐍 Python</span>
+          <span class="tag tag-purple">🏴 CTF Player</span>
+          <span class="tag">📊 Log Analysis</span>
+          <span class="tag">👁️ Computer Vision</span>
+          <span class="tag">🔧 Automation</span>
+          <span class="tag">🌐 Network Security</span>
         </div>
       </div>
     </section>
 
-    <!-- ========== FEATURED PROJECTS ========== -->
+    <!-- Featured Projects -->
     <section class="fade-in">
       <div class="section-header">
         <h2>// Featured Projects</h2>
@@ -102,7 +103,7 @@
         <p>Tools and scripts I've built</p>
       </div>
 
-      <div class="card-grid">
+      <div class="card-grid stagger-children">
         <div class="card">
           <h3>🎮 SimpleGame (OOP)</h3>
           <p>Python quiz game demonstrating Object-Oriented Programming principles and file handling.</p>
@@ -134,7 +135,7 @@
       </div>
     </section>
 
-    <!-- ========== FOOTER ========== -->
+    <!-- Footer -->
     <footer class="footer">
       <div class="footer-links">
         <a href="about.html">About</a>
@@ -148,6 +149,10 @@
 
   </div>
 
+  <!-- Scroll to Top -->
+  <button class="scroll-top" aria-label="Scroll to top">↑</button>
+
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>

@@ -15,7 +15,9 @@
 
 <body>
 
-  <!-- Navigation -->
+  <canvas id="particle-canvas"></canvas>
+  <div class="bg-orb"></div>
+
   <nav class="navbar">
     <a href="index.html" class="logo">&gt;_ 1n1t.tech</a>
     <div class="hamburger" aria-label="Toggle navigation">
@@ -35,20 +37,18 @@
 
   <div class="container">
 
-    <!-- Page Header -->
     <section class="hero fade-in" style="padding-bottom: var(--space-xl);">
       <h1>// Contact</h1>
       <p class="tagline">Let's connect — reach out through any channel</p>
     </section>
 
-    <!-- Contact Cards -->
     <section class="fade-in">
       <div class="section-header">
         <h2>Get in Touch</h2>
         <div class="section-line"></div>
       </div>
 
-      <div class="contact-grid">
+      <div class="contact-grid stagger-children">
 
         <!-- Email -->
         <a href="mailto:QHaddad@stud.jubilee.edu.jo" class="contact-card">
@@ -92,7 +92,7 @@
           </div>
         </a>
 
-        <!-- LinkedIn (placeholder) -->
+        <!-- LinkedIn -->
         <a href="#" class="contact-card">
           <div class="contact-icon">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -109,7 +109,6 @@
       </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
       <div class="footer-links">
         <a href="index.html">Home</a>
@@ -123,6 +122,7 @@
 
   </div>
 
+  <button class="scroll-top" aria-label="Scroll to top">↑</button>
   <script src="assets/js/main.js"></script>
 </body>
 
