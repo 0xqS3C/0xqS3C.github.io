@@ -2,745 +2,141 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>1n1t.tech | Terminal Portfolio</title>
-  <meta name="description"
-    content="Qusai (1n1t) — Interactive terminal-style cybersecurity portfolio. Type commands to explore projects, write-ups, and achievements." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1n1t.tech | Cyber-Terminal Portfolio</title>
+  <meta name="description" content="Qusai (1n1t) — Interactive Cyber-Terminal Portfolio. DFIR, Python, and CTF.">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <style>
-    /* ============================================================
-   1n1t.tech — Terminal Portfolio v5
-   ============================================================ */
-    *,
-    *::before,
-    *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --bg: #0b0f14;
-      --bg-card: #111820;
-      --bg-header: #0d1117;
-      --cyan: #00f0ff;
-      --green: #00ff88;
-      --magenta: #ff3388;
-      --yellow: #ffe156;
-      --purple: #bf5fff;
-      --text: #c9d1d9;
-      --text-dim: #555e6b;
-      --border: #21262d;
-      --font: 'Fira Code', monospace;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: var(--font);
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Scrollbar */
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: var(--bg);
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: var(--cyan);
-      border-radius: 3px;
-    }
-
-    /* ---- TERMINAL CONTAINER ---- */
-    .terminal-wrapper {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      max-width: 960px;
-      width: 100%;
-      margin: 0 auto;
-      padding: 0;
-    }
-
-    /* ---- HEADER BAR ---- */
-    .terminal-header {
-      background: var(--bg-header);
-      border: 1px solid var(--border);
-      border-bottom: none;
-      padding: 12px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .header-dots {
-      display: flex;
-      gap: 8px;
-    }
-
-    .header-dots span {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-    }
-
-    .dot-red {
-      background: #ff5f56;
-    }
-
-    .dot-yellow {
-      background: #ffbd2e;
-    }
-
-    .dot-green {
-      background: #27c93f;
-    }
-
-    .header-title {
-      font-size: 0.8rem;
-      color: var(--text-dim);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .header-nav {
-      display: flex;
-      gap: 4px;
-    }
-
-    .header-nav button {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text-dim);
-      font-family: var(--font);
-      font-size: 0.7rem;
-      padding: 4px 10px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .header-nav button:hover {
-      border-color: var(--cyan);
-      color: var(--cyan);
-    }
-
-    /* ---- OUTPUT LOG ---- */
-    .terminal-body {
-      flex: 1;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-top: none;
-      padding: 20px;
-      overflow-y: auto;
-      min-height: calc(100vh - 120px);
-    }
-
-    .output-line {
-      margin-bottom: 6px;
-      line-height: 1.6;
-      font-size: 0.88rem;
-      white-space: pre-wrap;
-      word-break: break-word;
-      animation: fadeIn 0.15s ease;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(4px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Log Styles */
-    .output-line.cmd {
-      color: var(--green);
-    }
-
-    .output-line.info {
-      color: var(--text);
-    }
-
-    .output-line.cyan {
-      color: var(--cyan);
-    }
-
-    .output-line.magenta {
-      color: var(--magenta);
-    }
-
-    .output-line.yellow {
-      color: var(--yellow);
-    }
-
-    .output-line.dim {
-      color: var(--text-dim);
-    }
-
-    .output-line.purple {
-      color: var(--purple);
-    }
-
-    .output-line.bold {
-      font-weight: 700;
-    }
-
-    .output-line.header {
-      color: var(--cyan);
-      font-weight: 700;
-      font-size: 1rem;
-      margin-top: 12px;
-      margin-bottom: 4px;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 4px;
-    }
-
-    .output-line.separator {
-      border-bottom: 1px solid var(--border);
-      margin: 8px 0;
-    }
-
-    .output-line a {
-      color: var(--cyan);
-      text-decoration: none;
-      border-bottom: 1px dotted var(--cyan);
-      transition: 0.2s;
-    }
-
-    .output-line a:hover {
-      color: var(--magenta);
-      border-color: var(--magenta);
-    }
-
-    /* Expandable Sections */
-    .expand-toggle {
-      cursor: pointer;
-      color: var(--yellow);
-      font-weight: 600;
-      border: 1px solid var(--border);
-      padding: 8px 16px;
-      margin: 8px 0;
-      display: inline-block;
-      transition: 0.2s;
-      background: transparent;
-      font-family: var(--font);
-      font-size: 0.85rem;
-    }
-
-    .expand-toggle:hover {
-      border-color: var(--yellow);
-      background: rgba(255, 225, 86, 0.08);
-    }
-
-    .expandable {
-      display: none;
-      margin: 8px 0 16px 0;
-      padding: 12px 16px;
-      border-left: 2px solid var(--cyan);
-      background: var(--bg-card);
-      animation: fadeIn 0.2s ease;
-    }
-
-    .expandable.open {
-      display: block;
-    }
-
-    /* ---- INPUT PROMPT ---- */
-    .input-area {
-      display: flex;
-      align-items: center;
-      padding: 4px 0;
-      margin-top: 12px;
-      border-top: 1px solid var(--border);
-      padding-top: 12px;
-    }
-
-    .prompt-symbol {
-      color: var(--green);
-      font-weight: 700;
-      margin-right: 8px;
-      white-space: nowrap;
-    }
-
-    .input-field {
-      flex: 1;
-      background: transparent;
-      border: none;
-      outline: none;
-      color: var(--text);
-      font-family: var(--font);
-      font-size: 0.88rem;
-      caret-color: var(--cyan);
-    }
-
-    /* Blinking Cursor (fallback visual) */
-    .cursor-blink {
-      display: inline-block;
-      width: 8px;
-      height: 1.1em;
-      background: var(--cyan);
-      animation: blink 1s step-end infinite;
-      vertical-align: text-bottom;
-      margin-left: 2px;
-    }
-
-    @keyframes blink {
-      50% {
-        opacity: 0;
-      }
-    }
-
-    /* ---- TAGS ---- */
-    .tag {
-      display: inline-block;
-      font-size: 0.7rem;
-      padding: 2px 6px;
-      border: 1px solid var(--border);
-      margin: 2px 4px 2px 0;
-      color: var(--text-dim);
-    }
-
-    .tag.cyan {
-      color: var(--cyan);
-      border-color: rgba(0, 240, 255, .3);
-    }
-
-    .tag.magenta {
-      color: var(--magenta);
-      border-color: rgba(255, 51, 136, .3);
-    }
-
-    .tag.purple {
-      color: var(--purple);
-      border-color: rgba(191, 95, 255, .3);
-    }
-
-    .tag.green {
-      color: var(--green);
-      border-color: rgba(0, 255, 136, .3);
-    }
-
-    /* ---- ASCII ART ---- */
-    .ascii {
-      color: var(--cyan);
-      line-height: 1.2;
-      font-size: 0.75rem;
-      margin-bottom: 8px;
-    }
-
-    /* ---- RESPONSIVE ---- */
-    @media (max-width: 768px) {
-      .terminal-wrapper {
-        max-width: 100%;
-      }
-
-      .terminal-header {
-        padding: 10px 14px;
-      }
-
-      .terminal-body {
-        padding: 14px;
-      }
-
-      .header-nav button {
-        font-size: 0.65rem;
-        padding: 3px 6px;
-      }
-
-      .header-title {
-        display: none;
-      }
-
-      .output-line {
-        font-size: 0.8rem;
-      }
-
-      .ascii {
-        font-size: 0.55rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-  <div class="terminal-wrapper">
 
-    <!-- Header Bar -->
-    <div class="terminal-header">
-      <div class="header-dots">
-        <span class="dot-red"></span>
-        <span class="dot-yellow"></span>
-        <span class="dot-green"></span>
-      </div>
-      <div class="header-title">1n1t@portfolio ~ $</div>
-      <div class="header-nav">
-        <button onclick="runCommand('about')">about</button>
-        <button onclick="runCommand('projects')">projects</button>
-        <button onclick="runCommand('writeups')">writeups</button>
-        <button onclick="runCommand('achievements')">achievements</button>
-        <button onclick="runCommand('contact')">contact</button>
-      </div>
-    </div>
+  <!-- Background FX -->
+  <canvas id="particle-canvas"></canvas>
 
-    <!-- Terminal Body -->
-    <div class="terminal-body" id="terminal-body">
-      <!-- Output lines appear here -->
-
-      <!-- Input Prompt -->
-      <div class="input-area" id="input-area">
-        <span class="prompt-symbol">visitor@1n1t.tech:~$</span>
-        <input type="text" class="input-field" id="cmd-input" autofocus autocomplete="off" spellcheck="false"
-          placeholder="Type a command..." />
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">1n1t.tech</a>
+      <button class="menu-toggle" aria-label="Toggle Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12h18M3 6h18M3 18h18" />
+        </svg>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="writeups/index.html">Write-ups</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="team.html">Team</a>
+        <a href="assets.html">Assets</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="glitch-wrapper">
+        <h1>
+          <span class="text-cyan">1n1t</span><span class="text-dim">.tech</span>
+        </h1>
+      </div>
+
+      <div class="tagline">
+        <p class="typewriter">
+          Cybersecurity Student · DFIR Specialist · Python Developer
+        </p>
+        <p class="text-muted">
+          Investigating incidents, analyzing systems, and building automation tools.
+        </p>
+
+        <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+          <a href="projects.html" class="btn btn-primary">View Projects</a>
+          <a href="contact.html" class="btn btn-magenta">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Access Grid -->
+    <section style="margin-bottom: 6rem;">
+      <div class="container">
+        <div class="section-header">
+          <h2>// System Modules</h2>
+        </div>
+
+        <div class="grid">
+          <!-- Projects Module -->
+          <div class="card">
+            <h3>Projects</h3>
+            <p>Python tools, automation scripts, and CV applications.</p>
+            <div class="tag-container">
+              <span class="tag cyan">Python</span>
+              <span class="tag green">Automation</span>
+            </div>
+            <a href="projects.html" class="btn" style="margin-top: auto;">Access Module</a>
+          </div>
+
+          <!-- Writeups Module -->
+          <div class="card">
+            <h3>Write-ups</h3>
+            <p>Detailed DFIR investigations and CTF challenge solutions.</p>
+            <div class="tag-container">
+              <span class="tag magenta">DFIR</span>
+              <span class="tag purple">CTF</span>
+            </div>
+            <a href="writeups/index.html" class="btn" style="margin-top: auto;">Read Logs</a>
+          </div>
+
+          <!-- About Module -->
+          <div class="card">
+            <h3>About Me</h3>
+            <p>Background, skills, and experience in cybersecurity.</p>
+            <div class="tag-container">
+              <span class="tag purple">Bio</span>
+              <span class="tag cyan">Skills</span>
+            </div>
+            <a href="about.html" class="btn" style="margin-top: auto;">View Profile</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2026 1n1t.tech | Built with <span class="text-magenta">♥</span> & Code</p>
+      <div style="margin-top: 0.5rem; opacity: 0.6;">
+        <a href="https://github.com/0xqS3C" target="_blank">GitHub</a> •
+        <a href="mailto:QHaddad@stud.jubilee.edu.jo">Email</a>
+      </div>
+    </footer>
 
   </div>
 
-  <script>
-    /* ============================================================
-       1n1t.tech — Terminal Engine v5
-       ============================================================ */
+  <!-- Terminal Overlay -->
+  <div class="terminal-overlay minimized">
+    <div class="terminal-header">
+      <span class="terminal-title">visitor@1n1t:~ (1n1t.os v6.0)</span>
+      <span style="color: var(--text-dim); font-size: 0.8rem;">Click to Toggle</span>
+    </div>
+    <div class="terminal-body">
+      <!-- Output Log -->
+      <div class="cmd-line">
+        <span class="prompt">visitor@1n1t:~$</span>
+        <input type="text" class="cmd-input" placeholder="Type 'help'..." autofocus spellcheck="false">
+      </div>
+    </div>
+  </div>
 
-    const body = document.getElementById('terminal-body');
-    const input = document.getElementById('cmd-input');
-    const inputArea = document.getElementById('input-area');
-
-    // ---- CONTENT DATA ----
-    const DATA = {
-      bio: {
-        name: 'Qusai (1n1t)',
-        title: 'Cybersecurity Student · DFIR Specialist · Python Developer',
-        summary: `I investigate incidents, analyze systems, and document attack paths.
-Focused on Active Directory security, network forensics, and building
-automation tools that make incident response faster and more reliable.`,
-        skills: ['Digital Forensics & IR', 'Active Directory Security', 'Python (OOP, Automation)', 'Network & Log Analysis', 'Computer Vision (OpenCV)', 'CTF Competitions', 'PowerShell & Bash', 'Scripting & Automation'],
-        github: 'https://github.com/0xqS3C'
-      },
-
-      projects: [
-        {
-          id: 'simplegame',
-          name: 'SimpleGame (OOP)',
-          tags: ['Python', 'OOP', 'File I/O'],
-          description: 'A Python quiz game demonstrating Object-Oriented Programming principles and file handling. Features multiple question types, scoring system, and persistent high scores.',
-          link: 'https://github.com/0xqS3C'
-        },
-        {
-          id: 'dfir-automation',
-          name: 'DFIR Automation',
-          tags: ['Python', 'DFIR', 'Automation'],
-          description: 'A collection of Python scripts for log analysis and incident response automation. Includes timeline builders, event correlators, and automated artifact extractors.',
-          link: 'https://github.com/0xqS3C'
-        },
-        {
-          id: 'ctf-tools',
-          name: 'CTF Tools',
-          tags: ['Python', 'CTF', 'Security'],
-          description: 'Custom-built tools to automate CTF challenge solving — includes decoders, brute-force utilities, crypto helpers, and reconnaissance scripts.',
-          link: 'https://github.com/0xqS3C'
-        },
-        {
-          id: 'virtual-mouse',
-          name: 'Virtual Mouse',
-          tags: ['Python', 'OpenCV', 'MediaPipe', 'Computer Vision'],
-          description: 'Hand tracking virtual mouse using Python & OpenCV. Inspired by Meta Quest & Apple Vision Pro hand gesture interfaces. Uses MediaPipe for real-time hand landmark detection.',
-          link: 'https://github.com/0xqS3C'
-        }
-      ],
-
-      writeups: [
-        {
-          id: 'the-final-hop',
-          name: 'The Final Hop',
-          tags: ['DFIR', 'Incident Response', 'Active Directory', 'Lateral Movement'],
-          description: `On the night of May 21 our SOC received a high-severity alert indicating unusual lateral movement in the Active Directory environment. Internal logs showed the Domain Controller (DC) was accessed by a suspicious account. A few hours later a critical application server became inaccessible. Booting from a recovery image revealed the local Administrator password had been changed without authorization.\n\nObjective: Investigate the incident, reconstruct the attacker\'s actions, and recover the changed password.\n\nFiles Provided: Case.ad1 (Disk image) · capture.pcapng (Network capture)`,
-          page: 'writeups/the-final-hop.html',
-          download: 'writeups/files/the-final-hop-writeup.docx'
-        }
-      ],
-
-      achievements: [
-        { icon: '🥇', name: 'Eureka Level Three — Gold Medal', detail: 'Electrical Engineering competition — First place finish' },
-        { icon: '🥈', name: 'Eureka Level Two — Silver Medal', detail: 'Arduino competition — Second place finish' },
-        { icon: '🏆', name: 'STEAM School Awards', detail: 'Best Programmer · Best Presenter · Best Individual Effort' },
-        { icon: '🏆', name: 'Top 12 — P3RF3CT R00T CTF', detail: 'Competitive CTF — Ranked within the top 12 teams' },
-        { icon: '🏆', name: 'Top 7 — Cyber Warriors 2025', detail: 'Cybersecurity competition — Top 7 ranking' },
-        { icon: '🏆', name: 'Top 5 — Cyber Kingdom CTF', detail: 'CTF competition — Top 5 team ranking' }
-      ],
-
-      team: [
-        { name: 'Qusai (1n1t)', role: 'Team Lead · DFIR · Python Dev', tag: 'Founder' },
-        { name: 'Team Member', role: 'Role · Specialty', tag: 'Member' },
-        { name: 'Team Member', role: 'Role · Specialty', tag: 'Member' }
-      ],
-
-      assets: {
-        'Forensics & IR': ['FTK Imager', 'Autopsy', 'Volatility', 'Splunk / ELK', 'Wireshark', 'Registry Explorer'],
-        'Offensive & Defensive': ['Burp Suite', 'Nmap', 'Kali Linux', 'Hashcat / John'],
-        'Development': ['Python', 'VS Code', 'Git & GitHub', 'PowerShell', 'Linux / Bash', 'OpenCV']
-      },
-
-      contact: {
-        email: 'QHaddad@stud.jubilee.edu.jo',
-        github: { url: 'https://github.com/0xqS3C', handle: '@0xqS3C' },
-        instagram: { url: 'https://instagram.com/_1n1t_', handle: '@_1n1t_' },
-        linkedin: { url: '#', handle: 'Connect with me' }
-      }
-    };
-
-    // ---- UTILITIES ----
-    function addLine(text, cls = 'info') {
-      const div = document.createElement('div');
-      div.className = 'output-line ' + cls;
-      div.innerHTML = text;
-      body.insertBefore(div, inputArea);
-      scrollToBottom();
-    }
-
-    function addHTML(html) {
-      const div = document.createElement('div');
-      div.innerHTML = html;
-      div.className = 'output-line info';
-      body.insertBefore(div, inputArea);
-      scrollToBottom();
-    }
-
-    function addSeparator() {
-      addLine('', 'separator');
-    }
-
-    function scrollToBottom() {
-      body.scrollTop = body.scrollHeight;
-    }
-
-    function tagsHTML(tags) {
-      return tags.map(t => {
-        const cls = t.match(/python|automation|bash/i) ? 'magenta' :
-          t.match(/dfir|ir|wireshark|forensic/i) ? 'cyan' :
-            t.match(/ctf|security/i) ? 'purple' :
-              t.match(/oop|file|opencv|mediapipe|vision/i) ? 'green' : '';
-        return `<span class="tag ${cls}">${t}</span>`;
-      }).join('');
-    }
-
-    // ---- COMMANDS ----
-    const COMMANDS = {
-
-      help() {
-        addLine('┌─ Available Commands ─────────────────────────┐', 'cyan');
-        addLine('│                                               │', 'cyan');
-        addLine('│  <span style="color:var(--green)">about</span>          Who I am, skills & bio         │', 'cyan');
-        addLine('│  <span style="color:var(--green)">projects</span>       My Python projects              │', 'cyan');
-        addLine('│  <span style="color:var(--green)">writeups</span>       CTF & DFIR write-ups            │', 'cyan');
-        addLine('│  <span style="color:var(--green)">achievements</span>   Awards & CTF rankings           │', 'cyan');
-        addLine('│  <span style="color:var(--green)">team</span>           Team members                    │', 'cyan');
-        addLine('│  <span style="color:var(--green)">assets</span>         Tools & technologies            │', 'cyan');
-        addLine('│  <span style="color:var(--green)">contact</span>        How to reach me                 │', 'cyan');
-        addLine('│  <span style="color:var(--green)">clear</span>          Clear the terminal              │', 'cyan');
-        addLine('│                                               │', 'cyan');
-        addLine('│  <span style="color:var(--yellow)">open &lt;name&gt;</span>    Expand a project or write-up   │', 'cyan');
-        addLine('│                                               │', 'cyan');
-        addLine('└───────────────────────────────────────────────┘', 'cyan');
-      },
-
-      about() {
-        addLine(`── ${DATA.bio.name} ──`, 'header');
-        addLine(DATA.bio.title, 'yellow');
-        addSeparator();
-        addLine(DATA.bio.summary, 'info');
-        addSeparator();
-        addLine('Skills:', 'bold');
-        DATA.bio.skills.forEach(s => addLine('  ▸ ' + s, 'info'));
-        addSeparator();
-        addLine(`GitHub: <a href="${DATA.bio.github}" target="_blank">${DATA.bio.github}</a>`, 'info');
-      },
-
-      projects() {
-        addLine('── Projects ──', 'header');
-        DATA.projects.forEach((p, i) => {
-          addLine(`  [${i + 1}] <span style="color:var(--green);font-weight:600">${p.name}</span>`, 'info');
-          addHTML('      ' + tagsHTML(p.tags));
-        });
-        addSeparator();
-        addLine('Type <span style="color:var(--yellow)">open &lt;name&gt;</span> to expand. Example: <span style="color:var(--yellow)">open simplegame</span>', 'dim');
-      },
-
-      writeups() {
-        addLine('── Write-ups ──', 'header');
-        DATA.writeups.forEach((w, i) => {
-          addLine(`  [${i + 1}] <span style="color:var(--green);font-weight:600">${w.name}</span>`, 'info');
-          addHTML('      ' + tagsHTML(w.tags));
-        });
-        addSeparator();
-        addLine('Type <span style="color:var(--yellow)">open &lt;name&gt;</span> to expand. Example: <span style="color:var(--yellow)">open the-final-hop</span>', 'dim');
-      },
-
-      achievements() {
-        addLine('── Achievements ──', 'header');
-        DATA.achievements.forEach(a => {
-          addLine(`  ${a.icon}  <span style="font-weight:600">${a.name}</span>`, 'info');
-          addLine(`      ${a.detail}`, 'dim');
-        });
-      },
-
-      team() {
-        addLine('── Team ──', 'header');
-        DATA.team.forEach(t => {
-          const tagCls = t.tag === 'Founder' ? 'cyan' : '';
-          addLine(`  ▸ <span style="font-weight:600">${t.name}</span>  <span class="tag ${tagCls}">${t.tag}</span>`, 'info');
-          addLine(`    ${t.role}`, 'dim');
-        });
-      },
-
-      assets() {
-        addLine('── Assets & Tools ──', 'header');
-        for (const [category, tools] of Object.entries(DATA.assets)) {
-          addLine(`  ┌ ${category}`, 'cyan');
-          tools.forEach(t => addLine(`  │  ▸ ${t}`, 'info'));
-          addLine('  └──', 'cyan');
-        }
-      },
-
-      contact() {
-        addLine('── Contact ──', 'header');
-        addLine(`  ✉  Email     <a href="mailto:${DATA.contact.email}">${DATA.contact.email}</a>`, 'info');
-        addLine(`  ⌘  GitHub    <a href="${DATA.contact.github.url}" target="_blank">${DATA.contact.github.handle}</a>`, 'info');
-        addLine(`  ◉  Instagram <a href="${DATA.contact.instagram.url}" target="_blank">${DATA.contact.instagram.handle}</a>`, 'info');
-        addLine(`  ▦  LinkedIn  <a href="${DATA.contact.linkedin.url}" target="_blank">${DATA.contact.linkedin.handle}</a>`, 'info');
-      },
-
-      clear() {
-        const lines = body.querySelectorAll('.output-line');
-        lines.forEach(l => l.remove());
-      },
-
-      open(args) {
-        if (!args) {
-          addLine('Usage: open &lt;name&gt;', 'yellow');
-          addLine('Example: open simplegame', 'dim');
-          return;
-        }
-        const query = args.toLowerCase().replace(/"/g, '').trim();
-
-        // Search projects
-        const project = DATA.projects.find(p =>
-          p.id === query || p.name.toLowerCase().includes(query)
-        );
-        if (project) {
-          addLine(`── ${project.name} ──`, 'header');
-          addHTML(tagsHTML(project.tags));
-          addSeparator();
-          addLine(project.description, 'info');
-          addSeparator();
-          addLine(`<a href="${project.link}" target="_blank">▸ View on GitHub</a>`, 'info');
-          return;
-        }
-
-        // Search writeups
-        const writeup = DATA.writeups.find(w =>
-          w.id === query || w.name.toLowerCase().includes(query)
-        );
-        if (writeup) {
-          addLine(`── ${writeup.name} ──`, 'header');
-          addHTML(tagsHTML(writeup.tags));
-          addSeparator();
-          addLine(writeup.description, 'info');
-          addSeparator();
-          if (writeup.page) {
-            addLine(`<a href="${writeup.page}">▸ Read Full Write-up</a>`, 'info');
-          }
-          if (writeup.download) {
-            addLine(`<a href="${writeup.download}">▸ Download Write-up (DOCX)</a>`, 'info');
-          }
-          return;
-        }
-
-        addLine(`Error: "${args}" not found. Try <span style="color:var(--green)">projects</span> or <span style="color:var(--green)">writeups</span> to see available items.`, 'magenta');
-      }
-    };
-
-    // ---- COMMAND PARSER ----
-    function runCommand(raw) {
-      const trimmed = raw.trim();
-      if (!trimmed) return;
-
-      // Echo the command
-      addLine(`<span style="color:var(--green);font-weight:700">visitor@1n1t.tech:~$</span> ${trimmed}`, 'cmd');
-
-      const parts = trimmed.split(/\s+/);
-      const cmd = parts[0].toLowerCase();
-      const args = parts.slice(1).join(' ');
-
-      if (COMMANDS[cmd]) {
-        COMMANDS[cmd](args);
-      } else {
-        addLine(`Command not found: <span style="color:var(--magenta)">${cmd}</span>`, 'magenta');
-        addLine('Type <span style="color:var(--green)">help</span> for available commands.', 'dim');
-      }
-
-      addSeparator();
-      input.value = '';
-      input.focus();
-      scrollToBottom();
-    }
-
-    // ---- INPUT HANDLING ----
-    input.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        runCommand(input.value);
-      }
-    });
-
-    // Focus input when clicking anywhere in terminal
-    body.addEventListener('click', (e) => {
-      if (e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON') {
-        input.focus();
-      }
-    });
-
-    // ---- BOOT SEQUENCE ----
-    function boot() {
-      const ascii = `
- ██╗███╗   ██╗██╗████████╗   ████████╗███████╗ ██████╗██╗  ██╗
-███║████╗  ██║██║╚══██╔══╝   ╚══██╔══╝██╔════╝██╔════╝██║  ██║
-╚██║██╔██╗ ██║██║   ██║         ██║   █████╗  ██║     ███████║
- ██║██║╚██╗██║██║   ██║         ██║   ██╔══╝  ██║     ██╔══██║
- ██║██║ ╚████║██║   ██║   ██╗   ██║   ███████╗╚██████╗██║  ██║
- ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝   ╚═╝   ╚═╝   ╚══════╝ ╚═════╝╚═╝  ╚═╝`;
-
-      addLine(`<pre class="ascii">${ascii}</pre>`, 'info');
-      addSeparator();
-      addLine('Welcome to <span style="color:var(--cyan);font-weight:700">1n1t.tech</span> — Interactive Terminal Portfolio', 'bold');
-      addLine('Cybersecurity · DFIR · Python Development', 'dim');
-      addSeparator();
-      addLine('Type <span style="color:var(--green);font-weight:700">help</span> to see available commands.', 'info');
-      addSeparator();
-      input.focus();
-    }
-
-    boot();
-  </script>
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>

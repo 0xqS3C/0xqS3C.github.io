@@ -2,15 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assets & Tools | 1n1t.tech</title>
-    <meta name="description"
-        content="Cybersecurity tools and technologies used by Qusai (1n1t) for DFIR, CTFs, and development." />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assets | 1n1t.tech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -19,157 +14,131 @@
     <canvas id="particle-canvas"></canvas>
 
     <nav class="navbar">
-        <a href="index.html" class="logo">&gt;_ 1n1t.tech</a>
-        <div class="hamburger" aria-label="Toggle navigation">
-            <span></span><span></span><span></span>
-        </div>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="projects.html">Projects</a>
-            <a href="writeups/index.html">Write-ups</a>
-            <a href="achievements.html">Achievements</a>
-            <a href="team.html">Team</a>
-            <a href="assets.html">Assets</a>
-            <a href="contact.html">Contact</a>
-        </div>
-    </nav>
-
-    <div class="container">
-
-        <section class="hero fade-in" style="min-height: 40vh; padding-bottom: 0;">
-            <h1>// Assets & Tools</h1>
-            <p class="tagline">The tools and technologies in my arsenal</p>
-        </section>
-
-        <!-- Forensics Tools -->
-        <section class="fade-in">
-            <div class="section-header">
-                <h2>Forensics & IR</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="card-grid stagger-children">
-                <div class="card" style="align-items: center; text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔬</div>
-                    <h3>FTK Imager</h3>
-                    <p>Disk imaging & evidence acquisition</p>
-                </div>
-                <div class="card" style="align-items: center; text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🧪</div>
-                    <h3>Autopsy</h3>
-                    <p>Digital forensics platform</p>
-                </div>
-                <div class="card" style="align-items: center; text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🧠</div>
-                    <h3>Volatility</h3>
-                    <p>Memory forensics framework</p>
-                </div>
-                <div class="card" style="align-items: center; text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">📊</div>
-                    <h3>Splunk / ELK</h3>
-                    <p>Log analysis & SIEM platforms</p>
-                </div>
-                <div class="card" style="align-items: center; text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">📡</div>
-                    <h3>Wireshark</h3>
-                    <p>Network protocol analyzer</p>
-                </div>
-                <div class="card" style="align-items: center; text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🗂️</div>
-                    <h3>Registry Explorer</h3>
-                    <p>Windows registry analysis</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Security Tools -->
-        <section class="fade-in">
-            <div class="section-header">
-                <h2>Offensive & Defensive</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="card-grid stagger-children">
-                <div class="card" style="align-items: center; text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🕷️</div>
-                    <h3>Burp Suite</h3>
-                    <p>Web application security testing</p>
-                </div>
-                <div class="card" style="align-items: center; text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🗺️</div>
-                    <h3>Nmap</h3>
-                    <p>Network scanning & enumeration</p>
-                </div>
-                <div class="card" style="align-items: center; text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🐉</div>
-                    <h3>Kali Linux</h3>
-                    <p>Penetration testing distribution</p>
-                </div>
-                <div class="card" style="align-items: center; text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔑</div>
-                    <h3>Hashcat / John</h3>
-                    <p>Password cracking & hash analysis</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Development Tools -->
-        <section class="fade-in">
-            <div class="section-header">
-                <h2>Development</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="card-grid stagger-children">
-                <div class="card" style="align-items: center; text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🐍</div>
-                    <h3>Python</h3>
-                    <p>OOP, automation, scripting, CV</p>
-                </div>
-                <div class="card" style="align-items: center; text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">📝</div>
-                    <h3>VS Code</h3>
-                    <p>Primary code editor</p>
-                </div>
-                <div class="card" style="align-items: center; text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔀</div>
-                    <h3>Git & GitHub</h3>
-                    <p>Version control & collaboration</p>
-                </div>
-                <div class="card" style="align-items: center; text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🖥️</div>
-                    <h3>PowerShell</h3>
-                    <p>Windows scripting & automation</p>
-                </div>
-                <div class="card" style="align-items: center; text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🐧</div>
-                    <h3>Linux / Bash</h3>
-                    <p>Shell scripting & system admin</p>
-                </div>
-                <div class="card" style="align-items: center; text-align: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">👁️</div>
-                    <h3>OpenCV</h3>
-                    <p>Computer vision & image processing</p>
-                </div>
-            </div>
-        </section>
-
-        <footer class="footer">
-            <div class="footer-links">
+        <div class="nav-container">
+            <a href="index.html" class="logo">1n1t.tech</a>
+            <button class="menu-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 12h18M3 6h18M3 18h18" />
+                </svg></button>
+            <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="projects.html">Projects</a>
                 <a href="writeups/index.html">Write-ups</a>
+                <a href="achievements.html">Achievements</a>
+                <a href="team.html">Team</a>
+                <a href="assets.html" class="active">Assets</a>
                 <a href="contact.html">Contact</a>
-                <a href="https://github.com/0xqS3C" target="_blank">GitHub</a>
             </div>
-            <p>&copy; 2026 1n1t.tech | Built with 💻 & passion for DFIR</p>
-        </footer>
+        </div>
+    </nav>
+
+    <div class="container" style="padding-top: var(--header-height);">
+
+        <section class="hero" style="min-height: 30vh; justify-content: flex-end; padding-bottom: 2rem;">
+            <h1>// Assets<span class="text-green">_</span></h1>
+            <p class="tagline">
+                The arsenal: Tools, technologies, and frameworks.
+            </p>
+        </section>
+
+        <!-- Forensics Section -->
+        <h3 class="text-cyan" style="margin-top: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">
+            Forensics & IR</h3>
+        <div class="grid fade-in delay-1"
+            style="margin-bottom: 4rem; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+            <div class="card" style="align-items: center; text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔬</div>
+                <h4>FTK Imager</h4>
+                <p style="font-size: 0.8rem;">Evidence Acquisition</p>
+            </div>
+            <div class="card" style="align-items: center; text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🧪</div>
+                <h4>Autopsy</h4>
+                <p style="font-size: 0.8rem;">Digital Forensics</p>
+            </div>
+            <div class="card" style="align-items: center; text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🧠</div>
+                <h4>Volatility</h4>
+                <p style="font-size: 0.8rem;">Memory Analysis</p>
+            </div>
+            <div class="card" style="align-items: center; text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">📡</div>
+                <h4>Wireshark</h4>
+                <p style="font-size: 0.8rem;">Network Analysis</p>
+            </div>
+        </div>
+
+        <!-- Offensive Section -->
+        <h3 class="text-magenta"
+            style="margin-top: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">Offensive / Red
+            Team</h3>
+        <div class="grid fade-in delay-2"
+            style="margin-bottom: 4rem; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+            <div class="card" style="align-items: center; text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🕷️</div>
+                <h4>Burp Suite</h4>
+                <p style="font-size: 0.8rem;">Web Security</p>
+            </div>
+            <div class="card" style="align-items: center; text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🗺️</div>
+                <h4>Nmap</h4>
+                <p style="font-size: 0.8rem;">Net Enumeration</p>
+            </div>
+            <div class="card" style="align-items: center; text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🐉</div>
+                <h4>Kali Linux</h4>
+                <p style="font-size: 0.8rem;">Penetration Testing</p>
+            </div>
+            <div class="card" style="align-items: center; text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔑</div>
+                <h4>Hashcat</h4>
+                <p style="font-size: 0.8rem;">Password Cracking</p>
+            </div>
+        </div>
+
+        <!-- Development Section -->
+        <h3 class="text-green"
+            style="margin-top: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">Development</h3>
+        <div class="grid fade-in delay-3"
+            style="margin-bottom: 4rem; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+            <div class="card" style="align-items: center; text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🐍</div>
+                <h4>Python</h4>
+                <p style="font-size: 0.8rem;">Automation/Scripting</p>
+            </div>
+            <div class="card" style="align-items: center; text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">📝</div>
+                <h4>VS Code</h4>
+                <p style="font-size: 0.8rem;">Development IDE</p>
+            </div>
+            <div class="card" style="align-items: center; text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔀</div>
+                <h4>Git</h4>
+                <p style="font-size: 0.8rem;">Version Control</p>
+            </div>
+            <div class="card" style="align-items: center; text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">👁️</div>
+                <h4>OpenCV</h4>
+                <p style="font-size: 0.8rem;">Computer Vision</p>
+            </div>
+        </div>
 
     </div>
 
-    <button class="scroll-top" aria-label="Scroll to top">↑</button>
+    <!-- Terminal Overlay -->
+    <div class="terminal-overlay minimized">
+        <div class="terminal-header">
+            <span class="terminal-title">visitor@1n1t:~ (1n1t.os v6.0)</span>
+            <span style="color: var(--text-dim); font-size: 0.8rem;">Click to Toggle</span>
+        </div>
+        <div class="terminal-body">
+            <div class="cmd-line">
+                <span class="prompt">visitor@1n1t:~$</span>
+                <input type="text" class="cmd-input" placeholder="Type 'help'..." spellcheck="false">
+            </div>
+        </div>
+    </div>
+
     <script src="assets/js/main.js"></script>
 </body>
 

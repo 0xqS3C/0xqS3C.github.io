@@ -2,14 +2,10 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Achievements | 1n1t.tech</title>
-  <meta name="description" content="CTF rankings, awards, and achievements by Qusai (1n1t)." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -18,103 +14,115 @@
   <canvas id="particle-canvas"></canvas>
 
   <nav class="navbar">
-    <a href="index.html" class="logo">&gt;_ 1n1t.tech</a>
-    <div class="hamburger" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="projects.html">Projects</a>
-      <a href="writeups/index.html">Write-ups</a>
-      <a href="achievements.html">Achievements</a>
-      <a href="team.html">Team</a>
-      <a href="assets.html">Assets</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
-
-  <div class="container">
-
-    <section class="hero fade-in" style="min-height: 40vh; padding-bottom: 0;">
-      <h1>// Achievements</h1>
-      <p class="tagline">CTF rankings, competitions, and awards</p>
-    </section>
-
-    <section class="fade-in">
-      <div class="section-header">
-        <h2>Awards & Recognition</h2>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="achievements-list stagger-children">
-
-        <div class="achievement-card">
-          <div class="achievement-icon" style="color: gold;">🥇</div>
-          <div class="achievement-info">
-            <h3>Eureka Level Three — Gold Medal</h3>
-            <p>Electrical Engineering competition — First place finish</p>
-          </div>
-        </div>
-
-        <div class="achievement-card">
-          <div class="achievement-icon" style="color: silver;">🥈</div>
-          <div class="achievement-info">
-            <h3>Eureka Level Two — Silver Medal</h3>
-            <p>Arduino competition — Second place finish</p>
-          </div>
-        </div>
-
-        <div class="achievement-card">
-          <div class="achievement-icon" style="color: var(--purple);">🏆</div>
-          <div class="achievement-info">
-            <h3>STEAM School Awards</h3>
-            <p>Best Programmer · Best Presenter · Best Individual Effort</p>
-          </div>
-        </div>
-
-        <div class="achievement-card">
-          <div class="achievement-icon" style="color: var(--cyan);">🏆</div>
-          <div class="achievement-info">
-            <h3>Top 12 — P3RF3CT R00T CTF</h3>
-            <p>Competitive CTF — Ranked within the top 12 teams</p>
-          </div>
-        </div>
-
-        <div class="achievement-card">
-          <div class="achievement-icon" style="color: var(--magenta);">🏆</div>
-          <div class="achievement-info">
-            <h3>Top 7 — Cyber Warriors 2025</h3>
-            <p>Cybersecurity competition — Top 7 ranking</p>
-          </div>
-        </div>
-
-        <div class="achievement-card">
-          <div class="achievement-icon" style="color: var(--text-primary);">🏆</div>
-          <div class="achievement-info">
-            <h3>Top 5 — Cyber Kingdom CTF</h3>
-            <p>CTF competition — Top 5 team ranking</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div class="footer-links">
+    <div class="nav-container">
+      <a href="index.html" class="logo">1n1t.tech</a>
+      <button class="menu-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12h18M3 6h18M3 18h18" />
+        </svg></button>
+      <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="projects.html">Projects</a>
         <a href="writeups/index.html">Write-ups</a>
+        <a href="achievements.html" class="active">Achievements</a>
+        <a href="team.html">Team</a>
+        <a href="assets.html">Assets</a>
         <a href="contact.html">Contact</a>
-        <a href="https://github.com/0xqS3C" target="_blank">GitHub</a>
       </div>
-      <p>&copy; 2026 1n1t.tech | Built with 💻 & passion for DFIR</p>
-    </footer>
+    </div>
+  </nav>
+
+  <div class="container" style="padding-top: var(--header-height);">
+
+    <section class="hero" style="min-height: 30vh; justify-content: flex-end; padding-bottom: 2rem;">
+      <h1>// Achievements<span class="text-yellow">.db</span></h1>
+      <p class="tagline">
+        Honors, CTF rankings, and competitive milestones.
+      </p>
+    </section>
+
+    <!-- Achievements Grid -->
+    <div class="grid fade-in delay-1" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));">
+
+      <!-- Gold Medal -->
+      <div class="card" style="align-items: center; text-align: center;">
+        <div style="font-size: 4rem; margin-bottom: 1rem; filter: drop-shadow(0 0 15px gold);">🥇</div>
+        <h3 class="text-yellow">Eureka Level 3</h3>
+        <p>Electrical Engineering Competition</p>
+        <div class="tag-container" style="justify-content: center;">
+          <span class="tag" style="border-color: gold; color: gold;">1st Place</span>
+        </div>
+      </div>
+
+      <!-- Silver Medal -->
+      <div class="card" style="align-items: center; text-align: center;">
+        <div style="font-size: 4rem; margin-bottom: 1rem; filter: drop-shadow(0 0 15px silver);">🥈</div>
+        <h3>Eureka Level 2</h3>
+        <p>Arduino & Robotics Competition</p>
+        <div class="tag-container" style="justify-content: center;">
+          <span class="tag">2nd Place</span>
+        </div>
+      </div>
+
+      <!-- STEAM Awards -->
+      <div class="card" style="align-items: center; text-align: center;">
+        <div style="font-size: 4rem; margin-bottom: 1rem; filter: drop-shadow(0 0 10px var(--purple));">🏆</div>
+        <h3 class="text-purple">STEAM Awards</h3>
+        <p>School-wide recognition for excellence.</p>
+        <div class="tag-container" style="justify-content: center;">
+          <span class="tag purple">Best Programmer</span>
+          <span class="tag purple">Best Presenter</span>
+        </div>
+      </div>
+
+      <!-- CTF Rank -->
+      <div class="card" style="align-items: center; text-align: center;">
+        <div style="font-size: 4rem; margin-bottom: 1rem; filter: drop-shadow(0 0 10px var(--cyan));">🚩</div>
+        <h3 class="text-cyan">P3RF3CT R00T</h3>
+        <p>Competitive CTF Event</p>
+        <div class="tag-container" style="justify-content: center;">
+          <span class="tag cyan">Top 12 Team</span>
+        </div>
+      </div>
+
+      <!-- Cyber Warriors -->
+      <div class="card" style="align-items: center; text-align: center;">
+        <div style="font-size: 4rem; margin-bottom: 1rem; filter: drop-shadow(0 0 10px var(--magenta));">🛡️</div>
+        <h3 class="text-magenta">Cyber Warriors</h3>
+        <p>National Cybersecurity Competition</p>
+        <div class="tag-container" style="justify-content: center;">
+          <span class="tag magenta">Top 7 Rank</span>
+        </div>
+      </div>
+
+      <!-- Cyber Kingdom -->
+      <div class="card" style="align-items: center; text-align: center;">
+        <div style="font-size: 4rem; margin-bottom: 1rem; filter: drop-shadow(0 0 10px var(--green));">⚔️</div>
+        <h3 class="text-green">Cyber Kingdom</h3>
+        <p>Capture The Flag Tournament</p>
+        <div class="tag-container" style="justify-content: center;">
+          <span class="tag green">Top 5 Team</span>
+        </div>
+      </div>
+
+    </div>
 
   </div>
 
-  <button class="scroll-top" aria-label="Scroll to top">↑</button>
+  <!-- Terminal Overlay -->
+  <div class="terminal-overlay minimized">
+    <div class="terminal-header">
+      <span class="terminal-title">visitor@1n1t:~ (1n1t.os v6.0)</span>
+      <span style="color: var(--text-dim); font-size: 0.8rem;">Click to Toggle</span>
+    </div>
+    <div class="terminal-body">
+      <div class="cmd-line">
+        <span class="prompt">visitor@1n1t:~$</span>
+        <input type="text" class="cmd-input" placeholder="Type 'help'..." spellcheck="false">
+      </div>
+    </div>
+  </div>
+
   <script src="assets/js/main.js"></script>
 </body>
 
