@@ -1,219 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>1n1t.tech | Portfolio</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
-
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Fira Code', monospace; background:#0b0f14; color:#e5e7eb; line-height:1.6; }
-    a { color:#00ffff; text-decoration:none; }
-    a:hover { color:#ff00ff; }
-
-    .container { max-width:1000px; margin:auto; padding:2rem; }
-
-    header { text-align:center; padding:2rem 0; }
-    header h1 { font-size:3rem; color:#00ffff; margin-bottom:0.5rem; text-shadow:0 0 10px #00ffff; }
-
-    nav { display:flex; justify-content:center; gap:2rem; margin:2rem 0; }
-    nav a { font-weight:bold; }
-
-    section {
-      margin:4rem 0;
-      padding:2rem;
-      background:#1c1f26;
-      border-radius:10px;
-      box-shadow:0 0 20px rgba(0,255,255,0.2);
-    }
-
-    section h2 {
-      color:#00ffff;
-      margin-bottom:1rem;
-      font-size:2rem;
-      border-bottom:2px solid #00ffff;
-      display:inline-block;
-      padding-bottom:0.3rem;
-    }
-
-    .btn {
-      display:inline-block;
-      margin-top:1rem;
-      padding:0.5rem 1rem;
-      border:2px solid #00ffff;
-      border-radius:5px;
-      color:#00ffff;
-      font-weight:bold;
-      cursor:pointer;
-    }
-
-    .btn:hover {
-      background:#00ffff;
-      color:#0b0f14;
-    }
-
-    /* Project Boxes */
-    .projects-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .project-box {
-      background:#0b0f14;
-      border:1px solid #00ffff;
-      padding:1rem;
-      border-radius:10px;
-      transition:0.3s;
-    }
-
-    .project-box:hover {
-      box-shadow:0 0 15px #00ffff;
-      transform: translateY(-5px);
-    }
-
-    pre {
-      background:#0b0f14;
-      border:1px solid #00ffff;
-      padding:1rem;
-      overflow-x:auto;
-      border-radius:5px;
-      margin-top:1rem;
-      display:none;
-    }
-
-    footer {
-      text-align:center;
-      margin:4rem 0 2rem;
-      color:#9ca3af;
-    }
-
-    @media(max-width:600px){
-      nav { flex-direction:column; gap:1rem; }
-    }
-
-  </style>
+  <meta charset="UTF-8">
+  <title>1n1t | Cybersecurity & DFIR</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-  <div class="container">
 
-    <header>
-      <h1>1n1t.tech</h1>
-      <p>Qusai's Portfolio | Cybersecurity [DFIR] & Programmer</p>
-      <p>GitHub: <a href="https://github.com/0xqS3C" target="_blank">@0xqS3C</a></p>
-    </header>
+<nav class="navbar">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="achievements.html">Achievements</a>
+  <a href="writeups/index.html">Write-ups</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-    <nav>
-      <a href="#about">About Me</a>
-      <a href="#projects">Python Projects</a>
-      <a href="#ctf">CTF Achievements</a>
-      <a href="#team">Team</a>
-      <a href="#contact">Contact</a>
-    </nav>
+<section class="container">
+  <h1>Qusai “1n1t” Haddad</h1>
+  <p>Cybersecurity · DFIR · Programmer</p>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        Hi, I’m Qusai, also known as 1n1t. I’m passionate about Cybersecurity and Digital Forensics & Incident Response (DFIR).  
-        I enjoy analyzing systems, investigating security incidents, and improving my technical skills every day.
-      </p>
-    </section>
+  <p>
+    I investigate incidents, analyze systems, and document attack paths.
+    Focused on Digital Forensics, Active Directory, and automation.
+  </p>
 
-    <section id="projects">
-      <h2>Python Projects</h2>
-
-      <div class="projects-container">
-
-        <div class="project-box">
-          <h3>SimpleGame (OOP)</h3>
-          <p>Python quiz game demonstrating OOP principles and file handling.</p>
-        </div>
-
-        <div class="project-box">
-          <h3>DFIR Automation</h3>
-          <p>Scripts for log analysis and incident response automation.</p>
-        </div>
-
-        <div class="project-box">
-          <h3>CTF Tools</h3>
-          <p>Custom tools to automate CTF challenge solving.</p>
-        </div>
-
-        <div class="project-box">
-          <h3>Network Monitor</h3>
-          <p>Python tool for analyzing network traffic patterns.</p>
-        </div>
-
-      </div>
-
-      <button class="btn" onclick="toggleCode()">Show Code Example</button>
-
-      <pre id="codeBlock">
-
-class SimpleGame:
-    def __init__(self,question,answer,points):
-        self.__Questionp=question
-        self.__Answer=answer
-        self.__Point=points
-
-    def GetQueation(self):
-        return self.__Questionp
-
-    def checkanwer(self,ans):
-        return ans == int(self.__Answer)
-
-      </pre>
-
-      <a href="https://github.com/0xqS3C" class="btn" target="_blank">View More Projects</a>
-
-    </section>
-
-    <section id="ctf">
-      <h2>CTF Achievements</h2>
-      <ul>
-        <li>🏆 Top 12 – P3RF3CT R00T CTF</li>
-        <li>🏆 Top 7 – Cyber Warriors 2025</li>
-        <li>🏆 Top 5 – Cyber Kingdom CTF</li>
-      </ul>
-    </section>
-
-    <section id="team">
-      <h2>Team</h2>
-      <p>Active member of JordanSec cybersecurity community.</p>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <ul>
-        <li>Email: <a href="mailto:QHaddad@stud.jubilee.edu.jo">QHaddad@stud.jubilee.edu.jo</a></li>
-        <li>GitHub: <a href="https://github.com/0xqS3C" target="_blank">@0xqS3C</a></li>
-        <li>Instagram: <a href="https://www.instagram.com/_1n1t_/" target="_blank">_1n1t_</a></li>
-      </ul>
-    </section>
-
-    <footer>
-      &copy; 2026 1n1t.tech | Built with 💻 & passion for DFIR
-    </footer>
-
-  </div>
-
-  <script>
-    function toggleCode() {
-      var code = document.getElementById("codeBlock");
-
-      if (code.style.display === "none" || code.style.display === "") {
-        code.style.display = "block";
-      } else {
-        code.style.display = "none";
-      }
-    }
-  </script>
+  <a href="writeups/index.html" class="btn">View Write-ups</a>
+</section>
 
 </body>
 </html>
