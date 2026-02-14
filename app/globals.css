@@ -8,6 +8,9 @@
     --cyber-magenta: #ff00ff;
     --cyber-green: #00ff88;
     --cyber-purple: #d700ff;
+    --glow-sm: 0 0 10px;
+    --glow-md: 0 0 20px;
+    --glow-lg: 0 0 30px;
   }
 
   * {
@@ -16,6 +19,10 @@
 
   body {
     @apply bg-cyber-dark text-gray-300 font-code antialiased;
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(0, 217, 255, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(255, 0, 255, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 40% 20%, rgba(0, 255, 136, 0.02) 0%, transparent 50%);
   }
 }
 
@@ -23,60 +30,119 @@
   .text-glow-cyan {
     text-shadow: 0 0 10px theme('colors.cyber.cyan'),
                  0 0 20px theme('colors.cyber.cyan'),
-                 0 0 30px theme('colors.cyber.cyan');
+                 0 0 40px rgba(0, 217, 255, 0.3);
   }
 
   .text-glow-magenta {
     text-shadow: 0 0 10px theme('colors.cyber.magenta'),
-                 0 0 20px theme('colors.cyber.magenta');
+                 0 0 20px theme('colors.cyber.magenta'),
+                 0 0 40px rgba(255, 0, 255, 0.3);
   }
 
   .text-glow-green {
-    text-shadow: 0 0 10px theme('colors.cyber.green');
+    text-shadow: 0 0 10px theme('colors.cyber.green'),
+                 0 0 20px rgba(0, 255, 136, 0.5);
   }
 
   .box-glow-cyan {
-    box-shadow: 0 0 10px theme('colors.cyber.cyan'),
-                0 0 20px theme('colors.cyber.cyan');
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.3),
+                0 0 30px rgba(0, 217, 255, 0.2),
+                inset 0 0 20px rgba(0, 217, 255, 0.05);
   }
 
   .box-glow-magenta {
-    box-shadow: 0 0 10px theme('colors.cyber.magenta'),
-                0 0 20px theme('colors.cyber.magenta');
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.3),
+                0 0 30px rgba(255, 0, 255, 0.2),
+                inset 0 0 20px rgba(255, 0, 255, 0.05);
   }
 
   .glass {
-    @apply bg-cyber-card/30 backdrop-blur-md border border-cyber-border/50;
+    @apply bg-cyber-card/40 backdrop-blur-lg border border-cyber-border/60;
+    box-shadow: 0 8px 32px 0 rgba(0, 217, 255, 0.05),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
   }
 
   .glass-hover {
-    @apply glass hover:bg-cyber-card/50 hover:border-cyber-cyan/50 transition-all duration-300;
+    @apply glass hover:bg-cyber-card/60 hover:border-cyber-cyan/60 transition-all duration-300;
+    transform-style: preserve-3d;
+  }
+  
+  .glass-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px 0 rgba(0, 217, 255, 0.15),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
   }
 
   .btn-cyber {
     @apply px-6 py-3 border-2 border-cyber-cyan text-cyber-cyan font-semibold rounded-lg
-           hover:bg-cyber-cyan hover:text-cyber-dark transition-all duration-300
-           hover:shadow-[0_0_20px_rgba(0,217,255,0.5)];
+           relative overflow-hidden transition-all duration-300;
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.05), transparent);
+  }
+  
+  .btn-cyber::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.3), transparent);
+    transition: left 0.5s;
+  }
+  
+  .btn-cyber:hover::before {
+    left: 100%;
+  }
+  
+  .btn-cyber:hover {
+    @apply bg-cyber-cyan text-cyber-dark;
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.6),
+                0 0 40px rgba(0, 217, 255, 0.3);
   }
 
   .btn-cyber-magenta {
     @apply px-6 py-3 border-2 border-cyber-magenta text-cyber-magenta font-semibold rounded-lg
-           hover:bg-cyber-magenta hover:text-cyber-dark transition-all duration-300
-           hover:shadow-[0_0_20px_rgba(255,0,255,0.5)];
+           relative overflow-hidden transition-all duration-300;
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.05), transparent);
+  }
+  
+  .btn-cyber-magenta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 0, 255, 0.3), transparent);
+    transition: left 0.5s;
+  }
+  
+  .btn-cyber-magenta:hover::before {
+    left: 100%;
+  }
+  
+  .btn-cyber-magenta:hover {
+    @apply bg-cyber-magenta text-cyber-dark;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.6),
+                0 0 40px rgba(255, 0, 255, 0.3);
   }
 
   .gradient-text {
     @apply bg-gradient-to-r from-cyber-cyan via-cyber-magenta to-cyber-purple bg-clip-text text-transparent;
+    background-size: 200% auto;
+    animation: gradient-shift 3s ease infinite;
   }
 
   .terminal-border {
-    @apply border-2 border-cyber-cyan/30 rounded-lg;
+    @apply border-2 border-cyber-cyan/40 rounded-lg;
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.1);
   }
 
   .nav-link {
-    @apply text-gray-400 hover:text-cyber-cyan transition-colors duration-200
+    @apply text-gray-400 hover:text-cyber-cyan transition-all duration-300
            relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 
-           after:bg-cyber-cyan after:transition-all after:duration-300
+           after:bg-gradient-to-r after:from-cyber-cyan after:to-cyber-magenta 
+           after:transition-all after:duration-300
            hover:after:w-full;
   }
 
@@ -87,15 +153,24 @@
 
 @layer components {
   .card-cyber {
-    @apply glass-hover p-6 rounded-lg flex flex-col;
+    @apply glass-hover p-6 rounded-xl flex flex-col;
+    background: linear-gradient(135deg, rgba(15, 17, 23, 0.6), rgba(10, 12, 18, 0.8));
+    border: 1px solid rgba(0, 217, 255, 0.2);
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-bold text-cyber-cyan mb-4;
+    @apply text-4xl md:text-5xl font-bold mb-6;
+    background: linear-gradient(135deg, #00d9ff 0%, #ff00ff 50%, #00ff88 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: gradient-shift 4s ease infinite;
   }
 
   .subsection-title {
-    @apply text-xl md:text-2xl font-semibold text-cyber-cyan mb-3;
+    @apply text-xl md:text-2xl font-semibold text-cyber-cyan mb-4;
+    text-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
   }
 }
 
@@ -135,8 +210,30 @@
   }
 }
 
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(0, 217, 255, 0.6);
+  }
+}
+
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
 }
 
 /* Glitch effect */
@@ -163,4 +260,18 @@
 
 .glitch:hover {
   animation: glitch 0.3s ease-in-out;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
