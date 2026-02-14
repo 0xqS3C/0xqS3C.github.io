@@ -5,11 +5,48 @@ echo "🚀 Deploying Next.js Portfolio to GitHub Pages"
 echo "================================================"
 echo ""
 
-# Check if we're in the right directory
-if [ ! -f "package.json" ]; then
-    echo "❌ Error: package.json not found. Please run this script from the repository root."
+# Check if we're in a git repository
+if [ ! -d ".git" ]; then
+    echo "❌ Error: Not a git repository. Please run this from the cloned repository."
     exit 1
 fi
+
+# Check current branch
+CURRENT_BRANCH=$(git branch --show-current)
+echo "📍 Current branch: $CURRENT_BRANCH"
+
+# Warn if not on the expected branch
+if [ "$CURRENT_BRANCH" != "copilot/complete-portfolio-rebuild" ] && [ "$CURRENT_BRANCH" != "main" ]; then
+    echo "⚠️  WARNING: You're on branch '$CURRENT_BRANCH'"
+    echo "   Expected: copilot/complete-portfolio-rebuild"
+    echo ""
+    read -p "Continue anyway? (y/N) " -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        echo "Deployment cancelled. Switch to correct branch:"
+        echo "  git checkout copilot/complete-portfolio-rebuild"
+        exit 1
+    fi
+fi
+
+# Check if we're in the right directory
+if [ ! -f "package.json" ]; then
+    echo "❌ Error: package.json not found."
+    echo ""
+    echo "📋 Troubleshooting:"
+    echo "1. Make sure you're in the repository root directory"
+    echo "2. Make sure you're on the correct branch: copilot/complete-portfolio-rebuild"
+    echo ""
+    echo "Run these commands:"
+    echo "  cd 0xqS3C.github.io"
+    echo "  git checkout copilot/complete-portfolio-rebuild"
+    echo "  git branch  # Should show * copilot/complete-portfolio-rebuild"
+    echo ""
+    echo "See TROUBLESHOOTING.md for more help"
+    exit 1
+fi
+
+echo "✅ Repository checks passed"
 
 # Check if out directory exists
 if [ ! -d "out" ]; then
