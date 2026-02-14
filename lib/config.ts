@@ -26,6 +26,8 @@ export const siteConfig = {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Projects', href: '/projects' },
+    { name: 'Writeups', href: '/writeups' },
+    { name: 'Team', href: '/team' },
     { name: 'Contact', href: '/contact' },
   ],
   
@@ -95,10 +97,45 @@ export const siteConfig = {
   
   education: [
     {
+      degree: 'High School Diploma',
+      institution: 'Jubilee School',
+      period: '2009',
+      focus: 'General Education',
+    },
+    {
       degree: 'Bachelor of Computer Science',
       institution: 'Jubilee University',
       period: '2020 - Present',
       focus: 'Cybersecurity & Digital Forensics',
+    },
+  ],
+  
+  team: {
+    name: 'JordanSec',
+    role: 'Team Member',
+    description: 'Active member of JordanSec cybersecurity team, collaborating on CTF competitions and security research.',
+    focus: ['CTF Competitions', 'Security Research', 'Knowledge Sharing'],
+  },
+  
+  writeups: [
+    {
+      id: 'the-final-hop',
+      title: 'The Final Hop',
+      description: 'On the night of May 21 our SOC received a high-severity alert indicating unusual lateral movement in the Active Directory environment. Internal logs showed the Domain Controller (DC) was accessed by a suspicious account. A few hours later a critical application server became inaccessible. Booting from a recovery image revealed the local Administrator password had been changed without authorization.',
+      category: 'DFIR',
+      tags: ['Active Directory', 'Lateral Movement', 'Forensics'],
+      file: '/writeups/files/the-final-hop-writeup.docx',
+      date: '2024',
+    },
+    // Placeholder for new writeup - user to add details
+    {
+      id: 'new-writeup',
+      title: 'New Writeup Title',
+      description: 'Description of the new writeup goes here...',
+      category: 'CTF',
+      tags: ['Tag1', 'Tag2'],
+      file: '/writeups/files/new-writeup.pdf',
+      date: '2026',
     },
   ],
   

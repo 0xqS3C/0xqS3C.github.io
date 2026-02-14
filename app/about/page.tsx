@@ -39,21 +39,25 @@ export default function AboutPage() {
                   <span className="text-cyber-cyan font-semibold">{siteConfig.author.username}</span>.
                 </p>
                 <p>
-                  Currently pursuing my Bachelor&apos;s in Computer Science with a specialization 
-                  in Cybersecurity and Digital Forensics at Jubilee University. My focus lies 
-                  in the intersection of security, forensics, and automation.
+                  I&apos;m a proud graduate of <span className="text-cyber-green">Jubilee School</span> (Class of 2009), 
+                  and currently pursuing my Bachelor&apos;s in Computer Science with a specialization 
+                  in Cybersecurity and Digital Forensics at Jubilee University. My journey in tech started 
+                  with a deep love for <span className="text-cyber-cyan">coding</span> and has evolved into 
+                  a passion for cybersecurity.
                 </p>
                 <p>
-                  As a <span className="text-cyber-green">DFIR Specialist</span>, I investigate 
+                  As a <span className="text-cyber-green">DFIR Specialist</span> and proud member of{' '}
+                  <span className="text-cyber-magenta font-semibold">JordanSec</span>, I investigate 
                   digital incidents, analyze artifacts, and reconstruct attack timelines. 
                   I&apos;m passionate about uncovering hidden traces in systems and networks, 
                   turning raw data into actionable intelligence.
                 </p>
                 <p>
-                  When not investigating incidents, I build automation tools in{' '}
-                  <span className="text-cyber-cyan">Python</span>, participate in CTF 
-                  competitions, and explore new security research. I believe in learning 
-                  by breaking things, understanding systems from the inside out.
+                  When not investigating incidents, I participate in{' '}
+                  <span className="text-cyber-cyan">CyS CTF competitions</span>, build automation tools in{' '}
+                  <span className="text-cyber-cyan">Python</span>, and explore new security research. 
+                  I believe in learning by breaking things, understanding systems from the inside out, 
+                  and sharing knowledge with the security community.
                 </p>
               </div>
             </div>
