@@ -58,16 +58,26 @@ A modern, production-ready cybersecurity portfolio built with Next.js 15, React 
 
 ## 📦 Build & Deploy
 
-### Quick Deploy to GitHub Pages
+### 🚀 Quick Deploy to GitHub Pages (Recommended)
+
+**Run these commands on YOUR LOCAL COMPUTER:**
 
 ```bash
-# Build the site
-npm install
-npm run build
+# 1. Clone the repository (if you haven't already)
+git clone https://github.com/0xqS3C/0xqS3C.github.io.git
+cd 0xqS3C.github.io
 
-# Deploy using automated script
-./deploy-to-gh-pages.sh
+# 2. Switch to the enhanced branch
+git checkout copilot/complete-portfolio-rebuild
+
+# 3. Install dependencies
+npm install
+
+# 4. Build and deploy
+npm run build && ./deploy-to-gh-pages.sh
 ```
+
+**Need detailed help?** See **[HOW-TO-DEPLOY.md](HOW-TO-DEPLOY.md)** for complete step-by-step instructions!
 
 The script handles git configuration, creates gh-pages branch, and pushes to GitHub.
 

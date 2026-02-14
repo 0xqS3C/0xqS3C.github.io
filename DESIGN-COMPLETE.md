@@ -19,11 +19,22 @@ Your portfolio now features a **premium, modern design** with these enhancements
 
 ## 🚀 Deploy NOW - One Command
 
+**IMPORTANT: Run these commands on YOUR LOCAL COMPUTER** (not on GitHub)
+
+**Complete step-by-step guide:** [HOW-TO-DEPLOY.md](HOW-TO-DEPLOY.md)
+
+**Quick Deploy:**
+
 ```bash
+# From your local terminal:
+git clone https://github.com/0xqS3C/0xqS3C.github.io.git
+cd 0xqS3C.github.io
+git checkout copilot/complete-portfolio-rebuild
+npm install
 npm run build && ./deploy-to-gh-pages.sh
 ```
 
-**That's all you need!** This single command will:
+**That's all you need!** This will:
 1. Build your optimized site
 2. Deploy it to GitHub Pages
 3. Make it live at your domain

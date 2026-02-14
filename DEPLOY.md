@@ -1,5 +1,13 @@
 # 🚀 One-Command Deployment Guide
 
+## ⚠️ IMPORTANT: Run on Your LOCAL Computer
+
+**All commands below must be run on YOUR computer** (in Terminal/Command Prompt), not in GitHub's web interface.
+
+See **[HOW-TO-DEPLOY.md](HOW-TO-DEPLOY.md)** for complete step-by-step instructions if you're unsure where to start!
+
+---
+
 ## Enhanced Design Features ✨
 
 Your portfolio has been upgraded with:
@@ -22,7 +30,20 @@ Your portfolio has been upgraded with:
 
 ## 🎯 Deploy with ONE Command
 
+**First, make sure you're in the repository folder on your local computer:**
+
 ```bash
+# 1. Clone the repo (if you haven't already)
+git clone https://github.com/0xqS3C/0xqS3C.github.io.git
+cd 0xqS3C.github.io
+
+# 2. Switch to the enhanced branch
+git checkout copilot/complete-portfolio-rebuild
+
+# 3. Install dependencies
+npm install
+
+# 4. Deploy!
 npm run build && ./deploy-to-gh-pages.sh
 ```
 
@@ -30,6 +51,8 @@ That's it! This command will:
 1. Build your optimized Next.js site
 2. Deploy it to GitHub Pages
 3. Make it live at your domain
+
+**Need help?** See [HOW-TO-DEPLOY.md](HOW-TO-DEPLOY.md) for detailed step-by-step instructions.
 
 ## Alternative: Manual Steps
 
