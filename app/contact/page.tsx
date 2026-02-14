@@ -71,7 +71,7 @@ export default function ContactPage() {
           className="text-center mb-16"
         >
           <h1 className="section-title">
-            <span className="text-gray-500">// </span>Establish Connection
+            <span className="text-gray-500">{'//'} </span>Establish Connection
             <span className="text-cyber-cyan">_</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">

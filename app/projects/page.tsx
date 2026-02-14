@@ -31,7 +31,7 @@ export default function ProjectsPage() {
           transition={{ duration: 0.6 }}
         >
           <h1 className="section-title">
-            <span className="text-gray-500">// </span>Projects
+            <span className="text-gray-500">{'//'} </span>Projects
             <span className="text-cyber-cyan">_</span>
           </h1>
           <p className="text-xl text-gray-400">

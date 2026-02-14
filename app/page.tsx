@@ -27,7 +27,7 @@ export default function HomePage() {
           className="mb-12"
         >
           <h2 className="section-title">
-            <span className="text-gray-500">// </span>System Modules
+            <span className="text-gray-500">{'//'} </span>System Modules
           </h2>
           <p className="text-gray-400">
             Investigating incidents, analyzing systems, and building automation tools.

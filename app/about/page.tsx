@@ -14,7 +14,7 @@ export default function AboutPage() {
           transition={{ duration: 0.6 }}
         >
           <h1 className="section-title">
-            <span className="text-gray-500">// </span>User Profile: 
+            <span className="text-gray-500">{'//'} </span>User Profile: 
             <span className="text-cyber-cyan"> {siteConfig.author.username}</span>
           </h1>
           <p className="text-xl text-gray-400">
@@ -117,7 +117,7 @@ export default function AboutPage() {
           className="mt-12"
         >
           <h2 className="section-title mb-8">
-            <span className="text-gray-500">// </span>Skill Matrix
+            <span className="text-gray-500">{'//'} </span>Skill Matrix
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
