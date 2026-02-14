@@ -58,9 +58,22 @@ A modern, production-ready cybersecurity portfolio built with Next.js 15, React 
 
 ## 📦 Build & Deploy
 
-### Automatic Deployment
+### Quick Deploy to GitHub Pages
 
-The site automatically deploys via GitHub Actions when you push to main:
+```bash
+# Build the site
+npm install
+npm run build
+
+# Deploy using automated script
+./deploy-to-gh-pages.sh
+```
+
+The script handles git configuration, creates gh-pages branch, and pushes to GitHub.
+
+### Automatic Deployment (GitHub Actions)
+
+The site can also automatically deploy via GitHub Actions when you push to main:
 
 ```bash
 # Push to trigger deployment
@@ -79,7 +92,7 @@ GitHub Actions will:
 npm run build
 ```
 
-See [DEPLOYMENT.md](DEPLOYMENT.md) for complete deployment instructions and DNS setup.
+See [DEPLOY_NOW.md](DEPLOY_NOW.md) for step-by-step deployment guide and [DEPLOYMENT.md](DEPLOYMENT.md) for complete DNS setup.
 
 ## 🎨 Customization
 

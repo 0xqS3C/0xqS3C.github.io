@@ -46,17 +46,25 @@ If you prefer to deploy manually:
    npm run build
    ```
 
-2. **Create gh-pages branch:**
+2. **Configure git identity (if not already set):**
+   ```bash
+   git config user.email "QHaddad@stud.jubilee.edu.jo"
+   git config user.name "Qusai"
+   ```
+
+3. **Create gh-pages branch:**
    ```bash
    git checkout --orphan gh-pages
    git rm -rf .
    cp -r out/* .
+   echo "1n1t.me" > CNAME
+   touch .nojekyll
    git add .
-   git commit -m "Deploy site"
-   git push origin gh-pages
+   git commit -m "Deploy Next.js portfolio"
+   git push -f origin gh-pages
    ```
 
-3. **Configure GitHub Pages:**
+4. **Configure GitHub Pages:**
    - Settings → Pages
    - Source: Deploy from a branch
    - Branch: gh-pages, / (root)
@@ -109,9 +117,33 @@ Build Output:
 - robots.txt, sitemap.xml (SEO)
 ```
 
-## ⚡ Quick Deploy (Copy-Paste)
+## ⚡ Quick Deploy Options
 
-If you have write access to the repository:
+### Option A: Automated Script (Easiest) 🌟
+
+```bash
+# Clone and build
+git clone https://github.com/0xqS3C/0xqS3C.github.io.git
+cd 0xqS3C.github.io
+git checkout copilot/complete-portfolio-rebuild
+npm install
+npm run build
+
+# Run the deployment script
+./deploy-to-gh-pages.sh
+```
+
+The script will:
+- ✅ Configure git identity automatically
+- ✅ Create gh-pages branch
+- ✅ Copy build files
+- ✅ Add CNAME and .nojekyll
+- ✅ Commit and push
+- ✅ Show next steps
+
+### Option B: Manual Commands (Copy-Paste)
+
+If you prefer to run commands manually:
 
 ```bash
 # Clone and switch to feature branch
@@ -122,6 +154,10 @@ git checkout copilot/complete-portfolio-rebuild
 # Build the site
 npm install
 npm run build
+
+# Configure git identity (required for commit)
+git config user.email "QHaddad@stud.jubilee.edu.jo"
+git config user.name "Qusai"
 
 # Deploy to gh-pages
 git checkout --orphan gh-pages
@@ -139,6 +175,11 @@ echo "✅ Now go to Settings → Pages and select gh-pages branch"
 
 ## 🆘 Need Help?
 
+- **Git identity error?** Run these commands before committing:
+  ```bash
+  git config user.email "QHaddad@stud.jubilee.edu.jo"
+  git config user.name "Qusai"
+  ```
 - **GitHub Actions failing?** Check if GitHub Pages is enabled in Settings
 - **Site not loading?** Verify GitHub Pages source is set correctly
 - **404 errors?** Make sure .nojekyll file is present
