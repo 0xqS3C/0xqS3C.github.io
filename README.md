@@ -25,7 +25,7 @@ A modern, production-ready cybersecurity portfolio built with Next.js 15, React 
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Styling**: [Tailwind CSS 3.4](https://tailwindcss.com/)
 - **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **Deployment**: [Vercel](https://vercel.com/)
+- **Deployment**: GitHub Pages with GitHub Actions
 - **Font**: Fira Code (monospace)
 
 ## 🛠️ Quick Start
@@ -58,13 +58,28 @@ A modern, production-ready cybersecurity portfolio built with Next.js 15, React 
 
 ## 📦 Build & Deploy
 
-### Local Production Build
+### Automatic Deployment
+
+The site automatically deploys via GitHub Actions when you push to main:
+
+```bash
+# Push to trigger deployment
+git push origin main
+```
+
+GitHub Actions will:
+1. Install dependencies
+2. Build the Next.js site
+3. Deploy to GitHub Pages
+4. Make it live at https://1n1t.me
+
+### Local Build
 
 ```bash
 npm run build
 ```
 
-See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.
+See [DEPLOYMENT.md](DEPLOYMENT.md) for complete deployment instructions and DNS setup.
 
 ## 🎨 Customization
 
